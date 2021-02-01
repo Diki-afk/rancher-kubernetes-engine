@@ -1,0 +1,238 @@
+# If you intened to deploy Kubernetes in an air-gapped environment,
+# please consult the documentation on how to configure custom RKE images.
+nodes:
+- address: 10.10.0.201
+  port: "22"
+  internal_address:  ""
+  role:
+  - controlplane
+  - etcd
+  hostname_override: ""
+  user: server1
+  docker_socket: /var/run/docker.sock
+  ssh_key: ""
+  ssh_key_path: ~/.ssh/id_rsa
+  ssh_cert: ""
+  ssh_cert_path: ""
+  labels: {}
+  taints: []
+- address: 10.10.0.202
+  port: "22"
+  internal_address: ""
+  role:
+  - worker
+  hostname_override: ""
+  user: server2
+  docker_socket: /var/run/docker.sock
+  ssh_key: |-
+     -----BEGIN RSA PRIVATE KEY-----
+     MIIEpQIBAAKCAQEAwxHQ3O2mCU0w5729TmwdSozexeDFHMCZTihAKP91dEYNpYja
+     kmlMe72d5NVAa+wH9YnSBJKt//6+J7Mp/94ZczCclW1T1lHz6DheufDoMQXqIjsj
+     3aouFWbnRX4/1fv0eDnppffLIBTeqtUEzrYbmcLpg+IwB7FRjPe/ZemHeHgIsKbl
+     V8/jWhvaeS/bZisj/R0vD8HCIfwz59TdohYXefd9otJGaDJCI7GVW3yFOB6djtl6
+     oH/KyyZ0sfL382HwrNCp4V0of+1CRmpHw89uI8zUioHv19SFfQxQPZbG/kOeuXDq
+     O47O/pphYWufCfQWr4wCqxQAQSdDDC2SYnlVqQIDAQABAoIBABqrVOLfmtOqugT0
+     6+zM2zRWDh7/m/NSYaNN3Xe9dVFwQm1fSIK74rkIM44Vmbkni+8F6LC3XRKiwVys
+     IhHZS6F0A/Rp/gxPKAmXq1vAk/4f0OLdMwobOjGy3+ugVxnqWIIXaNpIBn1cXRT+
+     Cqo4O43KGCLvyaFDnOKo/IHya5MMmOdCpkdqJ1I+vaEkSPnUmc093DF//WGnDXQR
+     v0woCGRhdjbBel46dfdXD0mGSRzLbVdTtguPlcNcSVpvreZUkoDmgvtF3F+UnjG/
+     RMW4SUHE+sMPOvIdiJ+C9yiLLjzK+lOefX55Z3Lto99rS3onVhnKJ5Td9dPB3yQu
+     oQn6sAECgYEA7peAWFAh1V5Y1x4hFYprur7D4zjL3Ww60UaRSRrNGITVYhzBciX8
+     SvgT/EfELyGSqdOkZayKD8vBQtVvykrCmmTACnnN4mfUI+LcEcI5BtKDD5Ykgb/d
+     wLoJgXGAOXxku4LhrVOYKCDgf6kHcBYRkCzp908S4nZnsFhmffOXTC0CgYEA0U1k
+     VeKjk5JyGjdYinvRIsp5BtRTo7+vlQ4WOhL2H4RlATtU6UusPuPt3aG7dgAEWSNn
+     5lhe1eKJZyeu024JmVM8ZcDoMr0ZLqoHKuRqFwe9EYZdfK8JNGOYGlqmW+h26ac4
+     zl1AiivAi2eANwaMHj/iAVSIIAdUD8lTuwtZEO0CgYEAveciRaiKNW0h4x7dEGsb
+     cgkSm1GCmlvhuN6lFv3ZDtHzkWL36eYoGHe6WIu6sBTVyoxlBnQ9c3MnAQ4nK2kz
+     2XWlkPEAGVuw81tG9G+VukNmA8rqhcd0Nkkc9cWkXJ0RBFqZS78ElbQNXC7qd6Fp
+     G0tUcf6jNlMuFqNV+Jwg6YUCgYEAi2FpbtRVsEF24MR4nwgjVnLVM9oTtNlC2RUf
+     ch8MbiKhjLdxLUcqdlsdHVnF16fdPWsZlsjEptSMQfioML53f/ZxIyXau2c4LN4n
+     lcW0bI/HtbLv8MczbwLf2LUDUfM1tRWZ+7sX7quCNpN/S6V9i+to2w/q8sFOlpCw
+     xL+i2WUCgYEA6kUj8p1TYCie6Jj32xIGQmw7fJ6BUAgbCDtuYBw3o5ocmJPL7s12
+     K7pQnfmX1XYK4rofgB8GGKmFarBWoBmT78/aSa0oHfRrYcj5xn2iTpiQPtjfRrCu
+     bN6DX4+lKcL7oevMtiZYglmBPzxCazHj0s4BuHFJQmba5+wO7L8O2ss=
+     -----END RSA PRIVATE KEY-----
+  ssh_key_path: ""
+  ssh_cert: ""
+  ssh_cert_path: ""
+  labels: {}
+  taints: []
+services:
+  etcd:
+    image: ""
+    extra_args: {}
+    extra_binds: []
+    extra_env: []
+    win_extra_args: {}
+    win_extra_binds: []
+    win_extra_env: []
+    external_urls: []
+    ca_cert: ""
+    cert: ""
+    key: ""
+    path: ""
+    uid: 0
+    gid: 0
+    snapshot: null
+    retention: ""
+    creation: ""
+    backup_config: null
+  kube-api:
+    image: ""
+    extra_args: {}
+    extra_binds: []
+    extra_env: []
+    win_extra_args: {}
+    win_extra_binds: []
+    win_extra_env: []
+    service_cluster_ip_range: 10.43.0.0/16
+    service_node_port_range: ""
+    pod_security_policy: false
+    always_pull_images: false
+    secrets_encryption_config: null
+    audit_log: null
+    admission_configuration: null
+    event_rate_limit: null
+  kube-controller:
+    image: ""
+    extra_args: {}
+    extra_binds: []
+    extra_env: []
+    win_extra_args: {}
+    win_extra_binds: []
+    win_extra_env: []
+    cluster_cidr: 10.42.0.0/16
+    service_cluster_ip_range: 10.43.0.0/16
+  scheduler:
+    image: ""
+    extra_args: {}
+    extra_binds: []
+    extra_env: []
+    win_extra_args: {}
+    win_extra_binds: []
+    win_extra_env: []
+  kubelet:
+    image: ""
+    extra_args: {}
+    extra_binds: []
+    extra_env: []
+    win_extra_args: {}
+    win_extra_binds: []
+    win_extra_env: []
+    cluster_domain: cluster.local
+    infra_container_image: ""
+    cluster_dns_server: 10.43.0.10
+    fail_swap_on: false
+    generate_serving_certificate: false
+  kubeproxy:
+    image: ""
+    extra_args: {}
+    extra_binds: []
+    extra_env: []
+    win_extra_args: {}
+    win_extra_binds: []
+    win_extra_env: []
+network:
+  plugin: canal
+  options: {}
+  mtu: 0
+  node_selector: {}
+  update_strategy: null
+  tolerations: []
+authentication:
+  strategy: x509
+  sans: []
+  webhook: null
+addons: ""
+addons_include: []
+system_images:
+  etcd: rancher/coreos-etcd:v3.4.13-rancher1
+  alpine: rancher/rke-tools:v0.1.69
+  nginx_proxy: rancher/rke-tools:v0.1.69
+  cert_downloader: rancher/rke-tools:v0.1.69
+  kubernetes_services_sidecar: rancher/rke-tools:v0.1.69
+  kubedns: rancher/k8s-dns-kube-dns:1.15.10
+  dnsmasq: rancher/k8s-dns-dnsmasq-nanny:1.15.10
+  kubedns_sidecar: rancher/k8s-dns-sidecar:1.15.10
+  kubedns_autoscaler: rancher/cluster-proportional-autoscaler:1.8.1
+  coredns: rancher/coredns-coredns:1.7.0
+  coredns_autoscaler: rancher/cluster-proportional-autoscaler:1.8.1
+  nodelocal: rancher/k8s-dns-node-cache:1.15.13
+  kubernetes: rancher/hyperkube:v1.19.7-rancher1
+  flannel: rancher/coreos-flannel:v0.13.0-rancher1
+  flannel_cni: rancher/flannel-cni:v0.3.0-rancher6
+  calico_node: rancher/calico-node:v3.16.5
+  calico_cni: rancher/calico-cni:v3.16.5
+  calico_controllers: rancher/calico-kube-controllers:v3.16.5
+  calico_ctl: rancher/calico-ctl:v3.16.5
+  calico_flexvol: rancher/calico-pod2daemon-flexvol:v3.16.5
+  canal_node: rancher/calico-node:v3.16.5
+  canal_cni: rancher/calico-cni:v3.16.5
+  canal_controllers: rancher/calico-kube-controllers:v3.16.5
+  canal_flannel: rancher/coreos-flannel:v0.13.0-rancher1
+  canal_flexvol: rancher/calico-pod2daemon-flexvol:v3.16.5
+  weave_node: weaveworks/weave-kube:2.7.0
+  weave_cni: weaveworks/weave-npc:2.7.0
+  pod_infra_container: rancher/pause:3.2
+  ingress: rancher/nginx-ingress-controller:nginx-0.35.0-rancher2
+  ingress_backend: rancher/nginx-ingress-controller-defaultbackend:1.5-rancher1
+  metrics_server: rancher/metrics-server:v0.3.6
+  windows_pod_infra_container: rancher/kubelet-pause:v0.1.4
+  aci_cni_deploy_container: noiro/cnideploy:5.1.1.0.1ae238a
+  aci_host_container: noiro/aci-containers-host:5.1.1.0.1ae238a
+  aci_opflex_container: noiro/opflex:5.1.1.0.1ae238a
+  aci_mcast_container: noiro/opflex:5.1.1.0.1ae238a
+  aci_ovs_container: noiro/openvswitch:5.1.1.0.1ae238a
+  aci_controller_container: noiro/aci-containers-controller:5.1.1.0.1ae238a
+  aci_gbp_server_container: noiro/gbp-server:5.1.1.0.1ae238a
+  aci_opflex_server_container: noiro/opflex-server:5.1.1.0.1ae238a
+ssh_key_path: ~/.ssh/id_rsa
+ssh_cert_path: ""
+ssh_agent_auth: false
+authorization:
+  mode: rbac
+  options: {}
+ignore_docker_version: null
+kubernetes_version: ""
+private_registries: []
+ingress:
+  provider: ""
+  options: {}
+  node_selector: {}
+  extra_args: {}
+  dns_policy: ""
+  extra_envs: []
+  extra_volumes: []
+  extra_volume_mounts: []
+  update_strategy: null
+  http_port: 0
+  https_port: 0
+  network_mode: ""
+  tolerations: []
+  default_backend: null
+cluster_name: ""
+cloud_provider:
+  name: ""
+prefix_path: ""
+win_prefix_path: ""
+addon_job_timeout: 0
+bastion_host:
+  address: ""
+  port: ""
+  user: ""
+  ssh_key: ""
+  ssh_key_path: ""
+  ssh_cert: ""
+  ssh_cert_path: ""
+monitoring:
+  provider: ""
+  options: {}
+  node_selector: {}
+  update_strategy: null
+  replicas: null
+  tolerations: []
+restore:
+  restore: false
+  snapshot_name: ""
+rotate_encryption_key: false
+dns: null
