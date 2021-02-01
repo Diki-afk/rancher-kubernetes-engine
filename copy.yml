@@ -26,31 +26,7 @@ nodes:
   docker_socket: /var/run/docker.sock
   ssh_key: |-
      -----BEGIN RSA PRIVATE KEY-----
-     MIIEpQIBAAKCAQEAwxHQ3O2mCU0w5729TmwdSozexeDFHMCZTihAKP91dEYNpYja
-     kmlMe72d5NVAa+wH9YnSBJKt//6+J7Mp/94ZczCclW1T1lHz6DheufDoMQXqIjsj
-     3aouFWbnRX4/1fv0eDnppffLIBTeqtUEzrYbmcLpg+IwB7FRjPe/ZemHeHgIsKbl
-     V8/jWhvaeS/bZisj/R0vD8HCIfwz59TdohYXefd9otJGaDJCI7GVW3yFOB6djtl6
-     oH/KyyZ0sfL382HwrNCp4V0of+1CRmpHw89uI8zUioHv19SFfQxQPZbG/kOeuXDq
-     O47O/pphYWufCfQWr4wCqxQAQSdDDC2SYnlVqQIDAQABAoIBABqrVOLfmtOqugT0
-     6+zM2zRWDh7/m/NSYaNN3Xe9dVFwQm1fSIK74rkIM44Vmbkni+8F6LC3XRKiwVys
-     IhHZS6F0A/Rp/gxPKAmXq1vAk/4f0OLdMwobOjGy3+ugVxnqWIIXaNpIBn1cXRT+
-     Cqo4O43KGCLvyaFDnOKo/IHya5MMmOdCpkdqJ1I+vaEkSPnUmc093DF//WGnDXQR
-     v0woCGRhdjbBel46dfdXD0mGSRzLbVdTtguPlcNcSVpvreZUkoDmgvtF3F+UnjG/
-     RMW4SUHE+sMPOvIdiJ+C9yiLLjzK+lOefX55Z3Lto99rS3onVhnKJ5Td9dPB3yQu
-     oQn6sAECgYEA7peAWFAh1V5Y1x4hFYprur7D4zjL3Ww60UaRSRrNGITVYhzBciX8
-     SvgT/EfELyGSqdOkZayKD8vBQtVvykrCmmTACnnN4mfUI+LcEcI5BtKDD5Ykgb/d
-     wLoJgXGAOXxku4LhrVOYKCDgf6kHcBYRkCzp908S4nZnsFhmffOXTC0CgYEA0U1k
-     VeKjk5JyGjdYinvRIsp5BtRTo7+vlQ4WOhL2H4RlATtU6UusPuPt3aG7dgAEWSNn
-     5lhe1eKJZyeu024JmVM8ZcDoMr0ZLqoHKuRqFwe9EYZdfK8JNGOYGlqmW+h26ac4
-     zl1AiivAi2eANwaMHj/iAVSIIAdUD8lTuwtZEO0CgYEAveciRaiKNW0h4x7dEGsb
-     cgkSm1GCmlvhuN6lFv3ZDtHzkWL36eYoGHe6WIu6sBTVyoxlBnQ9c3MnAQ4nK2kz
-     2XWlkPEAGVuw81tG9G+VukNmA8rqhcd0Nkkc9cWkXJ0RBFqZS78ElbQNXC7qd6Fp
-     G0tUcf6jNlMuFqNV+Jwg6YUCgYEAi2FpbtRVsEF24MR4nwgjVnLVM9oTtNlC2RUf
-     ch8MbiKhjLdxLUcqdlsdHVnF16fdPWsZlsjEptSMQfioML53f/ZxIyXau2c4LN4n
-     lcW0bI/HtbLv8MczbwLf2LUDUfM1tRWZ+7sX7quCNpN/S6V9i+to2w/q8sFOlpCw
-     xL+i2WUCgYEA6kUj8p1TYCie6Jj32xIGQmw7fJ6BUAgbCDtuYBw3o5ocmJPL7s12
-     K7pQnfmX1XYK4rofgB8GGKmFarBWoBmT78/aSa0oHfRrYcj5xn2iTpiQPtjfRrCu
-     bN6DX4+lKcL7oevMtiZYglmBPzxCazHj0s4BuHFJQmba5+wO7L8O2ss=
+     
      -----END RSA PRIVATE KEY-----
   ssh_key_path: ""
   ssh_cert: ""
